@@ -31,8 +31,6 @@ class BinaryDiceLoss(nn.Module):
         p: Denominator value: \sum{x^p} + \sum{y^p}, default: 2
         predict: A tensor of shape [N, *]
         target: A tensor of shape same with predict
-        reduction: Reduction method to apply, return mean over batch if 'mean',
-            return sum if 'sum', return a tensor of shape [N,] if 'none'
     Returns:
         Loss tensor according to arg reduction
     Raise:
