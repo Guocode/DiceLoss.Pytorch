@@ -46,7 +46,7 @@ class BinaryDiceLoss(nn.Module):
         predict = predict.contiguous().view(predict.shape[0], -1)
         target = target.contiguous().view(target.shape[0], -1)
 
-        num = torch.sum(torch.mul(predict, target)) + self.smooth
+        num = torch.sum(torch.mul(predict, target))*2 + self.smooth
         den = torch.sum(predict.pow(self.p) + target.pow(self.p)) + self.smooth
 
         dice = num / den
